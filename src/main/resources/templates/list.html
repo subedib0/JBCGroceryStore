@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+<a href="/add"> Show Inentory</a><br />
+
+
+<table>
+
+
+
+    <tr>
+
+
+
+        <th>Inventory</th>
+        <th>revenue</th>
+
+
+    </tr>
+
+    <tr th:each="store: ${stores}">
+        <td th:text="${store.inventory}"> </td>
+        <td th:text="${store.revenue}"> </td>
+
+
+    </tr>
+</table>
+
+
+</body>
+</html>

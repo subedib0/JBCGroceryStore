@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+<form action=" #"
+      th:action=" @{/process}"
+      th:object=" ${costemic}"
+      method="post">
+    <input type ="hidden" th:field=" *{id}"/>
+
+    Brand :<input type ="text" th:field=" *{brand}"/>
+    <span th:if="${#fields.hasErrors('brand')}"
+          th:errors ="*{title}"></span><br />
+
+    Popular :<textarea row ="3" th:field=" *{popular}"/>
+    <span th:if="${#fields.hasErrors('popular')}"
+          th:errors ="*{popular}"></span><br />
+
+    <input type="submit" value="Submit"/>
+</form>
+
+</body>
+</html>

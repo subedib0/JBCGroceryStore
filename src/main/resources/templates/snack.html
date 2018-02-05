@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+</head>
+<body>
+
+this is my snacks list
+
+<a href="/snack"> Add a Snacks Items</a><br />
+
+
+<table>
+
+
+
+    <tr>
+
+
+
+
+        <th>Crunchiness</th>
+        <th>Priece</th>
+
+
+    </tr>
+
+    <tr th:each="snack. ${snacks}">
+        <td th:text="${snack.crunchiness}"> </td>
+        <td th:text="${snack.price}"> </td>
+
+
+    </tr>
+</table>
+
+
+
+</body>
+</html>
