@@ -7,13 +7,13 @@
 <body>
 <form action=" #"
       th:action=" @{/process}"
-      th:object=" ${costemic}"
+      th:object=" ${Cosmetic}"
       method="post">
     <input type ="hidden" th:field=" *{id}"/>
 
     Brand :<input type ="text" th:field=" *{brand}"/>
     <span th:if="${#fields.hasErrors('brand')}"
-          th:errors ="*{title}"></span><br />
+          th:errors ="*{brand}"></span><br />
 
     Popular :<textarea row ="3" th:field=" *{popular}"/>
     <span th:if="${#fields.hasErrors('popular')}"

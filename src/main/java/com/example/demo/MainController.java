@@ -44,11 +44,12 @@ public class MainController {
 
 
     @PostMapping("/process")
-    public String processForm(@Valid Store store, BindingResult result){
+    public String processForm(@Valid Store store, BindingResult result,Model model){
         if (result.hasErrors()) {
 
             return "storeform";
         }
+        model.addAttribute()
       storeRepository.save(store);
         return "redirect:/";
 
@@ -56,14 +57,14 @@ public class MainController {
 
     @RequestMapping("/cosmetic")
     public String listCosmetic(Model model) {
-        model.addAttribute("Costemic", cosmeticReprository.findAll());
-        return "costemic";
+        model.addAttribute("Cosmetic", cosmeticReprository.findAll());
+        return "cosmetic";
     }
 
     @GetMapping("/addcosmetic")
     public String shopCosmetics(Model model) {
 
-        model.addAttribute("Costemic", new Store());
+        model.addAttribute("Cosmetic", new Store());
         return "cosmeticform";
 
     }
@@ -72,7 +73,7 @@ public class MainController {
     public String processForm(@Valid Cosmetic cosmetic, BindingResult result) {
         if (result.hasErrors()) {
 
-            return "costemicform";
+            return "cosmeticform";
         }
         cosmeticReprository.save(cosmetic);
         return "redirect:/costemic";
